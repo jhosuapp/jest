@@ -1,3 +1,25 @@
+Métodos, atributos nativos de Jest
+
+Método "test": Este método es la función principal y recibe como primer argumento un string para identificar el nombre del test y como
+segundo argumento le pasamos una función de callback en la cual ira toda la lógica de nuestro test
+
+test('test name', ()=>{
+    test....
+});
+
+Método "describe": Este método nos ayuda a añadir un título más descriptivo para nuestro test, como primer argumento recibe un string con el título
+y como segundo argumento recibe una función de callback la cual lleva el contenido de nuestro test
+
+describe('Mi prueba en el componente test', ()=>{
+    test('test', ()=>{
+        test....
+    });
+});
+
+Método "Expect": 
+
+
+
 01: AAA
 
 La priemra A se refiere a Arrange(Preparar):

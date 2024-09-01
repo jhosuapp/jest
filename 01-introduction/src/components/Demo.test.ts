@@ -1,7 +1,15 @@
-test('Esta prueba no debe fallar', ()=>{
 
-    if( 0 === 0){
-        throw new Error('No se puede hacer la división');
-    }
+describe('Test in file <Demo.tsx />', ()=>{
+    test('Compare two strings', ()=>{
+        
+        // 1. A Appear(Preparar)
+        const message1 = 'Hello World';
 
+        //2. A Act(Actuar)
+        const message2 = message1.trim();
+
+        //3. A Assert(Afirmar)
+        expect( message1 ).toBe( message2 );
+
+    });
 });
