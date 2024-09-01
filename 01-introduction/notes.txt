@@ -1,0 +1,15 @@
+01: AAA
+
+La priemra A se refiere a Arrange(Preparar):
+
+Arrange hace referencia a inicializar los objetos, vairables etc..., aquí se prepara todo lo necesario para la prueba 
+
+La segunda A se refiere Act(Actuar)
+
+Act es la fase en donde se ejecuta el código
+
+La tercera A se refiere Assert(Afirmar)
+
+Act es la última fase donde se verifican los resultados, se utilizan aserciones para comparar los resultados obtenidos con los esperados
+
+
