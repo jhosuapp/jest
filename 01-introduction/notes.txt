@@ -1,3 +1,16 @@
+//=============== INSTALACIÓN ===============
+
+1. Instalar el paquete como dependencia de desarrollo desde https://jestjs.io/docs/getting-started
+2. Configurar el script en package.json
+3. Para usar javascript moderno se deben instalar otras dependencias las cuales se mencionan en la documentación 
+previamente mencionada
+4. Una vez instaladas las dependencias se debe crear y configurar un archivo como babel.config.js
+
+//============= FIN INSTALACIÓN ==============
+
+
+//============ MÉTODOS DE JEST O ATRIBUTOS =============
+
 Métodos, atributos nativos de Jest
 
 Método "test": Este método es la función principal y recibe como primer argumento un string para identificar el nombre del test y como
@@ -16,9 +29,10 @@ describe('Mi prueba en el componente test', ()=>{
     });
 });
 
-Método "Expect": 
 
+Método "expect": 
 
+//FIN MÉTODOS DE JEST O ATRIBUTOS
 
 01: AAA
 
