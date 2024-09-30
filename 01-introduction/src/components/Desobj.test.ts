@@ -14,7 +14,7 @@ describe('Test in Desobk.test', ()=>{
         //Act
         const action = usContext(obj);
         //Assert
-        expect(obj).toEqual(action);
+        expect(action).toEqual(obj);
     });
 
     it("Types data", ()=>{

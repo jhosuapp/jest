@@ -9,7 +9,7 @@ describe('Test in file <Demo.tsx />', ()=>{
         const message2 = message1.trim();
 
         //3. A Assert(Afirmar)
-        expect( message1 ).toBe( message2 );
+        expect( message2 ).toBe( message1 );
 
     });
 });
