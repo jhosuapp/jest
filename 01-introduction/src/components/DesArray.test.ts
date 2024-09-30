@@ -1,6 +1,5 @@
 import { DesArray } from "./DesArray";
 
-
 describe('Test in DesArray.ts', ()=>{
     test('Return a array with any string and any number', ()=>{
 
