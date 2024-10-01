@@ -5,6 +5,8 @@
 3. Para usar javascript moderno se deben instalar otras dependencias las cuales se mencionan en la documentación 
 previamente mencionada
 4. Una vez instaladas las dependencias se debe crear y configurar un archivo como babel.config.js
+5. Para hacer testeo en componentes de react se debe usar un paquete aparte, para este caso se recomienda '@testing-library/react'
+6. Para poder usar las propiedades de testing-library/react se debe hacer una configuración adicional en el babel.config.js y en el archivo jest.config.js
 
 //============= FIN INSTALACIÓN ==============
 
