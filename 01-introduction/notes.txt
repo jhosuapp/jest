@@ -16,7 +16,10 @@ Métodos, atributos nativos de Jest
 Método "test": Este método es la función principal y recibe como primer argumento un string para identificar el nombre del test y como
 segundo argumento le pasamos una función de callback en la cual ira toda la lógica de nuestro test
 
-test('test name', ()=>{
+La función de callback tiene un argumento, el cual podremos usar para indicar cuando se ha terminado la ejecución de un test, esto sirve
+para funcionalidades asyncronas
+
+test('test name', (done)=>{
     test....
 });
 
@@ -29,8 +32,10 @@ describe('Mi prueba en el componente test', ()=>{
     });
 });
 
-
 Método "expect": 
+
+A este metodo se le pasa el valor esperado, se debe acompañar con otro metodo para corroborar la información, por ejemplo "toEqual, toBe, toBeFalsy etc..."
+
 
 //FIN MÉTODOS DE JEST O ATRIBUTOS
 

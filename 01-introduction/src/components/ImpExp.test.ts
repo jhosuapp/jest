@@ -25,6 +25,11 @@ describe('Test in ImpExp.ts', ()=>{
         const act = getHeroeByOwner(owner);
 
         expect(act.length).toEqual(3);
+        expect(act).toEqual([
+            { id: 1, name: 'Batman', owner: 'DC' },
+            { id: 3, name: 'Superman', owner: 'DC' },
+            { id: 4, name: 'Flash', owner: 'DC' }
+        ]);
     });
 
     it('should return 2 heroes', ()=>{
@@ -32,6 +37,10 @@ describe('Test in ImpExp.ts', ()=>{
         const act = getHeroeByOwner(owner);
 
         expect(act.length).toEqual(2);
+        expect(act).toEqual([
+            { id: 2, name: 'Spiderman', owner: 'Marvel' },
+            { id: 5, name: 'Wolverine', owner: 'Marvel' }
+        ]);
     });
 
 });
