@@ -8,18 +8,18 @@ const CounterApp = ({initialNumber}:IProps):JSX.Element => {
 
     const [counter, setCounter] = useState<number>(initialNumber);
 
-    const handleAppCounter = ()=>{
+    const handleIncrement = ()=>{
         setCounter(counter + 1);
     }
-    const handleAppCounterSecondary = ()=>{
+    const handleDecrement = ()=>{
         setCounter(counter - 1);
     }
 
     return (
         <>
-            <button onClick={ handleAppCounter }>+1</button>
+            <button onClick={ handleIncrement }>+1</button>
             <p>{counter}</p>
-            <button onClick={ handleAppCounterSecondary }>-1</button>
+            <button aria-label="btn-decrement" onClick={ handleDecrement }>-1</button>
         </>
     )
 }
