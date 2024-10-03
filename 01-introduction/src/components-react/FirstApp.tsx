@@ -9,7 +9,7 @@ const FirstApp = ({ title, subtitle, name }:IFirstAppProps ):JSX.Element => {
     return (
         <>
             <h1>{ title }</h1>
-            <h2>{ subtitle }</h2>
+            <h2 data-testid="test-subtitle">{ subtitle }</h2>
             <p>{ name }</p>
         </>
     )
