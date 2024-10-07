@@ -21,7 +21,6 @@ const useFetch = <T>(url: string): useFetchState<T> =>{
         isLoading: true,
         error: {} as useFetchError,
     });
-    console.log(localCache);
     //Mount 
     const isMounted = useRef(true);
     //Request when url change

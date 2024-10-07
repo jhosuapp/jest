@@ -30,7 +30,7 @@ describe('UseForm Hooks', ()=>{
                     name: 'username',
                     value: newValue
                 }
-            } as React.ChangeEvent<HTMLInputElement>; // Castea el objeto a ChangeEvent
+            } as React.ChangeEvent<HTMLInputElement>;
     
             HandleOnChange(mockEvent);
         });
@@ -50,7 +50,7 @@ describe('UseForm Hooks', ()=>{
                     name: 'username',
                     value: newValue
                 }
-            } as React.ChangeEvent<HTMLInputElement>; // Castea el objeto a ChangeEvent
+            } as React.ChangeEvent<HTMLInputElement>;
     
             HandleOnChange(mockEvent);
             HandleOnReset();

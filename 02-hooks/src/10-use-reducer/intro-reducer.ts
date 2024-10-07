@@ -37,7 +37,7 @@ const newTodo = {
 
 const addTodoAction = {
     type: '[TODO] añadir Todo',
-    payload: newTodo
+     payload: newTodo
 }
 
 todos = todoReducer(todos, addTodoAction);
