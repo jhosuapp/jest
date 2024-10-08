@@ -39,8 +39,8 @@ const PokemonCard = ({ name, id, sprites}:IPokemon):JSX.Element => {
             {/* Images */}
             <div>
                 {
-                    sprites?.map((sprite)=> (
-                        <img key={ sprite }  src={ sprite } alt={ name } />
+                    sprites?.map((sprite, index)=> (
+                        <img key={ index }  src={ sprite } alt={ name } />
                     ))
                 }
             </div>  

@@ -43,7 +43,7 @@ describe('UseForm Hooks', ()=>{
         const newValue = 'Jhosua'
         const { result } = renderHook(()=> useForm(initialValue));
         const { HandleOnChange, HandleOnReset } = result.current;
-
+        
         act(()=>{
             const mockEvent = {
                 target: {
