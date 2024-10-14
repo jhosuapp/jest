@@ -18,8 +18,6 @@ const MultipleCustomHooks = ():JSX.Element => {
     const { counter, increment, decrement } = useCounter(1);
     const { data, isLoading } = useFetch<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${ counter }`);
 
-
-
     return (
         <section className="container mt-5">
             <h1>multiple custom hooks</h1>

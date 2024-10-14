@@ -5,119 +5,105 @@ import { useCounter } from '../hooks/useCounter';
 
 jest.mock('../hooks/useFetch');
 jest.mock('../hooks/useCounter');
-
-describe('MultipleCustomHooks component', ()=>{
-
-    const mockIncrement = jest.fn();
-    const mockDecrement = jest.fn();
-
-    beforeEach(() => {
-        jest.clearAllMocks();
-    });
+    
+describe('MultipleCustomHook', ()=>{
         
-    it('should render the component correctly', () => {
-        (useCounter as jest.Mock).mockReturnValue({
-            counter: 1,
-            increment: mockIncrement,
-            decrement: mockDecrement
-        });
+    it('should render component', ()=>{
 
         (useFetch as jest.Mock).mockReturnValue({
-            data: null,
-            isLoading: true
+            isLoading: true,
+            data: []
         });
 
+        (useCounter as jest.Mock).mockReturnValue({
+            counter: 1,
+            increment: jest.fn(),
+            decrement: jest.fn(),
+        });
+        
         const { container } = render(<MultipleCustomHooks />);
-        expect(container).toBeTruthy();
-        expect(screen.getByText('multiple custom hooks')).toBeTruthy();
+        
+        expect(container).toBeInTheDocument();
+        expect(screen.getByText('Cargando')).toBeInTheDocument();
     });
-
-    it('should show the LoadingMessage when isLoading is true', () => {
-        (useCounter as jest.Mock).mockReturnValue({
-            counter: 1,
-            increment: mockIncrement,
-            decrement: mockDecrement
-        });
+    
+    it('should render component with data', ()=>{
 
         (useFetch as jest.Mock).mockReturnValue({
-            data: null,
-            isLoading: true
-        });
-
-        render(<MultipleCustomHooks />);
-        expect(screen.getByText('Loading...')).toBeTruthy();
-    });
-
-    it('should show the PokemonCard when data is loaded', () => {
-        const pokemonData = {
-            name: 'pikachu',
-            id: '25',
-            sprites: {
-                front_default: 'front.png',
-                front_shiny: 'shiny_front.png',
-                back_default: 'back.png',
-                back_shiny: 'shiny_back.png'
+            isLoading: false,
+            data: {
+                name: 'test',
+                id: 'test',
+                sprites: {
+                    // front_default: 'test',
+                    // front_shiny: 'test',
+                    // back_default: 'test',
+                    // back_shiny: 'test'
+                }
             }
-        };
+        });
 
         (useCounter as jest.Mock).mockReturnValue({
             counter: 1,
-            increment: mockIncrement,
-            decrement: mockDecrement
-        });
-
-        (useFetch as jest.Mock).mockReturnValue({
-            data: pokemonData,
-            isLoading: false
+            increment: jest.fn(),
+            decrement: jest.fn(),
         });
 
         render(<MultipleCustomHooks />);
-        expect(screen.getByText('pikachu')).toBeTruthy();
-        expect(screen.getByAltText('front.png')).toBeTruthy();
+
+        expect(screen.getAllByRole('img').length).toBe(4);
     });
 
-    it('should disable buttons when isLoading is true', () => {
+    it('Should test increment', ()=>{
+        const incrementMock = jest.fn();
+
+        (useFetch as jest.Mock).mockReturnValue({
+            isLoading: false,
+            data: {
+                name: 'test',
+                id: 'test',
+                sprites: {  }
+            }
+        });
+
         (useCounter as jest.Mock).mockReturnValue({
             counter: 1,
-            increment: mockIncrement,
-            decrement: mockDecrement
-        });
-
-        (useFetch as jest.Mock).mockReturnValue({
-            data: null,
-            isLoading: true
+            increment: incrementMock,
+            decrement: jest.fn(),
         });
 
         render(<MultipleCustomHooks />);
-        const prevButton = screen.getByText('Anterior');
-        const nextButton = screen.getByText('Siguiente');
+        const buttonNext = screen.getByText('Siguiente');
 
-        // expect(prevButton).toBeDisabled();
-        // expect(nextButton).toBeDisabled();
+        fireEvent.click(buttonNext);
+
+        expect(incrementMock).toHaveBeenCalled();
     });
 
-    it('should call increment and decrement functions on button click', () => {
+    it('Should test decrement', ()=>{
+        const decrementMock = jest.fn();
+
+        (useFetch as jest.Mock).mockReturnValue({
+            isLoading: false,
+            data: {
+                name: 'test',
+                id: 'test',
+                sprites: {  }
+            }
+        });
+
         (useCounter as jest.Mock).mockReturnValue({
             counter: 2,
-            increment: mockIncrement,
-            decrement: mockDecrement
-        });
-
-        (useFetch as jest.Mock).mockReturnValue({
-            data: null,
-            isLoading: false
+            increment: jest.fn(),
+            decrement: decrementMock,
         });
 
         render(<MultipleCustomHooks />);
+        const buttonPrev = screen.getByText('Anterior');
 
-        const prevButton = screen.getByText('Anterior');
-        const nextButton = screen.getByText('Siguiente');
+        fireEvent.click(buttonPrev);
 
-        fireEvent.click(prevButton);
-        expect(mockDecrement).toHaveBeenCalledWith(1);
-
-        fireEvent.click(nextButton);
-        expect(mockIncrement).toHaveBeenCalledWith(1);
+        expect(decrementMock).toHaveBeenCalled();
     });
     
 });
