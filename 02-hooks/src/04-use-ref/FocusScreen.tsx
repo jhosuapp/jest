@@ -5,7 +5,7 @@ const FocusScreen = ():JSX.Element => {
     const nodeInput = useRef<HTMLInputElement>(null);
 
     const handleClick = ()=>{
-        nodeInput.current && nodeInput.current.select();
+        nodeInput.current && nodeInput.current.focus();
     }
 
     return (
