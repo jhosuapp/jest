@@ -30,11 +30,13 @@ const TodoAdd = ( { handleTodo }:Props ):JSX.Element => {
     }
 
     return (
-        <form onSubmit={ handleAddTodo }>
+        <form onSubmit={ handleAddTodo } aria-label="form">
             <input type="text" 
                 placeholder=""
                 className="form-control"
                 ref={ nodeInput }
+                aria-label="input"
+                data-testid="input"
             />
             {error && <p className="text-danger red">El campo no puede estar vacío</p>}
             <button 

@@ -1,7 +1,7 @@
 import { TodoListItem } from './index';
 import { IinitialTodos, IinitialTodo } from '../models/index';
 
-type IpropsTodoList = {
+export type IpropsTodoList = {
     state: IinitialTodos,
     handleTodoDelete: (Todo:IinitialTodo) => void,
     handleTodoToggle: (Todo:IinitialTodo) => void,
